@@ -3,7 +3,9 @@ EXPOSE 80
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-COPY * /usr/share/nginx/html/
+COPY * /etc/nginx/html
+
+RUN chmod -R 777 /etc/nginx/html
 
 STOPSIGNAL SIGQUIT
 
